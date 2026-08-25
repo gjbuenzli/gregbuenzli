@@ -1,137 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Greg Buenzli — Author</title>
-  <meta name="description" content="Greg Buenzli, author of And Then We Hit a Rock — the true story of a family of five who moved onto a sailboat.">
-  <link rel="canonical" href="https://gregbuenzli.com/">
-  <!-- Open Graph -->
-  <meta property="og:type" content="profile">
-  <meta property="og:title" content="Greg Buenzli — Author">
-  <meta property="og:description" content="Author of And Then We Hit a Rock.">
-  <meta property="og:url" content="https://gregbuenzli.com/">
-  <meta property="og:image" content="https://gregbuenzli.com/cover.png">
-  <!-- Inline SVG favicon: GB monogram -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='14' ry='9.5' fill='%23ffffff' stroke='%23111111' stroke-width='2'/%3E%3Ctext x='16' y='16' text-anchor='middle' dominant-baseline='central' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='11' fill='%23111111'%3EGB%3C/text%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --paper: #faf8f4;
-      --ink: #1c1b19;
-      --muted: #6b675f;
-      --sea: #1f3a5f;
-      --line: #e6e1d8;
-    }
-    * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--sea); }
-    .wrap { max-width: 640px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 5.5rem) 1.5rem 3rem; text-align: center; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greg Buenzli — Author &amp; Engineering Leader</title>
+<meta name="description" content="Greg Buenzli — best-selling author of And Then We Hit a Rock and Chief Technology Officer. Writer, engineering leader, and reluctant sailor, based in Denver, Colorado.">
+<link rel="canonical" href="https://gregbuenzli.com/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Greg Buenzli — Author &amp; Engineering Leader">
+<meta property="og:description" content="Best-selling author of And Then We Hit a Rock and Chief Technology Officer.">
+<meta property="og:url" content="https://gregbuenzli.com/">
+<meta property="og:image" content="https://gregbuenzli.com/cover.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='14' ry='9.5' fill='%23f5efe3' stroke='%2315304a' stroke-width='2'/%3E%3Ctext x='16' y='16' text-anchor='middle' dominant-baseline='central' font-family='Georgia,serif' font-weight='700' font-size='11' fill='%2315304a'%3EGB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5efe3; --paper-2:#efe6d4; --ink:#1d1b15; --muted:#6c6553;
+  --navy:#15304a; --navy-2:#0d2032; --brass:#b0894f; --brass-ink:#8a6a38;
+  --line:#ddd2bc;
+  --shadow: 0 30px 60px -38px rgba(21,48,74,.5);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Spectral',Georgia,serif;font-weight:400;line-height:1.7;
+  font-size:18px;-webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(1200px 600px at 80% -10%, rgba(176,137,79,.10), transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, rgba(21,48,74,.06), transparent 55%);
+}
+/* paper grain */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+a{color:var(--navy);text-decoration-color:var(--brass);text-underline-offset:3px}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-.015em;line-height:1.05;margin:0}
+.label{font-family:'Fraunces',serif;font-weight:500;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-ink)}
+.hr{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);border:0;margin:0}
 
-    .avatar {
-      display: block;
-      width: clamp(124px, 32vw, 152px);
-      height: auto;
-      margin: 0 auto 1.6rem;
-      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.16));
-    }
-    h1 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 600;
-      font-size: clamp(2rem, 6vw, 3rem);
-      letter-spacing: -0.02em;
-      margin: 0;
-    }
-    .role {
-      font-size: 0.78rem; letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--muted); margin-top: 0.7rem;
-    }
-    .rule { width: 44px; height: 2px; background: var(--sea); border: 0; margin: 1.6rem auto 2rem; }
+/* top bar */
+header.bar{position:sticky;top:0;z-index:10;backdrop-filter:blur(8px);
+  background:rgba(245,239,227,.82);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:'Fraunces',serif;font-weight:600;letter-spacing:.02em}
+.brand svg{width:40px;height:auto;display:block}
+nav.top{display:flex;gap:1.6rem}
+nav.top a{font-family:'Fraunces',serif;font-size:.86rem;letter-spacing:.02em;text-decoration:none;color:var(--ink);opacity:.8}
+nav.top a:hover{opacity:1;color:var(--navy)}
+@media(max-width:640px){nav.top{display:none}}
 
-    .bio {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: clamp(1.1rem, 3vw, 1.3rem);
-      line-height: 1.55;
-      color: #35322d;
-      max-width: 46ch;
-      margin: 0 auto clamp(2.5rem, 7vw, 3.5rem);
-    }
+/* reveal */
+.rise{opacity:0;transform:translateY(16px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}}
 
-    /* Book strip */
-    .book {
-      display: flex; align-items: center; gap: 1.5rem; text-align: left;
-      background: #fff; border: 1px solid var(--line); border-radius: 14px;
-      padding: 1.4rem 1.6rem; max-width: 460px; margin: 0 auto clamp(2rem, 6vw, 3rem);
-      box-shadow: 0 20px 50px -32px rgba(31,58,95,0.35);
-    }
-    .book img { width: 84px; height: auto; border-radius: 3px; flex: none; }
-    .book h2 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 1.2rem; margin: 0 0 0.15rem; line-height: 1.15; }
-    .book p { margin: 0 0 0.7rem; color: var(--muted); font-size: 0.9rem; }
-    .book a.btn {
-      display: inline-block; background: var(--sea); color: #fff; text-decoration: none;
-      font-weight: 600; font-size: 0.85rem; padding: 0.5rem 1.1rem; border-radius: 999px;
-    }
+/* hero */
+.hero{padding:clamp(3.5rem,9vw,7rem) 0 clamp(2.5rem,6vw,4rem);text-align:center}
+.oval{width:clamp(128px,30vw,168px);height:auto;display:block;margin:0 auto 2rem;filter:drop-shadow(0 14px 26px rgba(0,0,0,.16))}
+.hero h1{font-size:clamp(3rem,11vw,6.4rem);font-weight:400}
+.hero h1 em{font-style:italic;color:var(--navy)}
+.hero .tag{margin:1.2rem auto 0;max-width:34ch;font-size:clamp(1.05rem,2.6vw,1.3rem);color:var(--muted)}
+.hero .meta{margin-top:1.4rem;display:flex;gap:1rem;justify-content:center;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+.dotsep{width:4px;height:4px;border-radius:50%;background:var(--brass)}
 
-    .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-bottom: 1rem; }
-    .links a {
-      text-decoration: none; color: var(--ink);
-      border: 1px solid var(--line); background: #fff;
-      padding: 0.55rem 1.1rem; border-radius: 999px; font-size: 0.9rem; font-weight: 500;
-      transition: border-color .15s ease, transform .15s ease;
-    }
-    .links a:hover { border-color: var(--sea); transform: translateY(-1px); }
+/* section scaffold */
+section{padding:clamp(3rem,7vw,5.5rem) 0}
+.sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:2rem}
+.sec-head .num{font-family:'Fraunces',serif;color:var(--brass);font-size:.9rem;font-weight:600}
+.sec-head h2{font-size:clamp(1.8rem,4.5vw,2.7rem)}
 
-    footer {
-      margin-top: clamp(2.5rem, 7vw, 4rem); padding-top: 1.8rem;
-      border-top: 1px solid var(--line); color: var(--muted); font-size: 0.82rem;
-    }
-    footer a { color: var(--muted); }
+/* about */
+.about p{font-size:clamp(1.12rem,2.4vw,1.32rem);line-height:1.75;max-width:60ch;color:#2c2920}
+.about p+p{margin-top:1.3rem}
+.about p:first-of-type::first-letter{
+  font-family:'Fraunces',serif;font-weight:500;float:left;font-size:3.9em;line-height:.72;
+  padding:.06em .12em 0 0;color:var(--navy)}
 
-    @media (max-width: 460px) { .book { flex-direction: column; text-align: center; } }
-  </style>
+/* book feature */
+.book{display:grid;grid-template-columns:300px 1fr;gap:clamp(1.8rem,5vw,3.4rem);align-items:center;
+  background:linear-gradient(180deg,#fff,#fbf7ee);border:1px solid var(--line);border-radius:16px;
+  padding:clamp(1.8rem,5vw,3rem);box-shadow:var(--shadow)}
+.book .cover{position:relative}
+.book .cover img{width:100%;height:auto;display:block;border-radius:4px;
+  box-shadow:0 26px 50px -22px rgba(21,48,74,.55)}
+.book h3{font-size:clamp(1.7rem,4vw,2.3rem)}
+.book .by{color:var(--muted);font-style:italic;margin:.3rem 0 1.1rem}
+.book p.blurb{color:#332f27;margin:0 0 1.3rem}
+.stars{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin:0 0 1.4rem;color:var(--muted);font-size:.92rem}
+.stars b{color:var(--ink);font-weight:500}
+.stars .g{color:var(--brass);letter-spacing:2px}
+.pull{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;color:var(--navy);
+  border-left:2px solid var(--brass);padding-left:1rem;margin:0 0 1.4rem}
+.cta-row{display:flex;gap:.7rem;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-family:'Fraunces',serif;font-weight:500;font-size:.95rem;
+  padding:.72rem 1.5rem;border-radius:999px;transition:transform .15s ease,box-shadow .15s ease,background .15s}
+.btn.solid{background:var(--navy);color:#fbf7ee}
+.btn.solid:hover{transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(21,48,74,.8)}
+.btn.ghost{border:1px solid var(--line);color:var(--ink);background:transparent}
+.btn.ghost:hover{border-color:var(--navy);transform:translateY(-2px)}
+@media(max-width:660px){.book{grid-template-columns:1fr;text-align:center}.book .cover img{max-width:230px;margin:0 auto}
+  .stars,.cta-row{justify-content:center}.pull{border-left:0;padding:0;border-top:2px solid var(--brass);padding-top:.9rem}
+  .about p:first-of-type::first-letter{font-size:3.2em}}
+
+/* work timeline */
+.tl{border-left:2px solid var(--line);margin-left:.4rem;padding-left:1.7rem;display:grid;gap:1.6rem}
+.tl .item{position:relative}
+.tl .item::before{content:"";position:absolute;left:-2.06rem;top:.55rem;width:11px;height:11px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--brass)}
+.tl .item.now::before{background:var(--brass)}
+.tl .role{font-family:'Fraunces',serif;font-size:1.18rem;font-weight:500}
+.tl .org{color:var(--navy);font-weight:500}
+.tl .when{color:var(--muted);font-size:.85rem;font-family:'Fraunces',serif;letter-spacing:.02em}
+.tl .desc{color:#3a362b;font-size:.98rem;margin-top:.15rem}
+.edu{margin-top:1.8rem;color:var(--muted);font-size:.95rem}
+.edu b{color:var(--ink);font-weight:500}
+
+/* ventures */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:1.6rem 1.7rem;transition:transform .18s ease,box-shadow .18s ease,border-color .18s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--brass)}
+.card .k{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:500;margin-bottom:.3rem}
+.card .d{color:var(--muted);font-size:.95rem}
+.card .go{margin-top:.9rem;color:var(--brass-ink);font-family:'Fraunces',serif;font-size:.85rem;letter-spacing:.04em}
+@media(max-width:600px){.cards{grid-template-columns:1fr}}
+
+/* connect */
+.connect{text-align:center;background:var(--navy);color:#eee4cf;border-radius:18px;
+  padding:clamp(2.5rem,7vw,4rem);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.connect::after{content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
+  background-image:radial-gradient(600px 240px at 50% -30%,rgba(176,137,79,.28),transparent 70%)}
+.connect h2{color:#fff;font-size:clamp(1.8rem,4.5vw,2.6rem);position:relative}
+.connect p{color:#cdbfa6;max-width:44ch;margin:1rem auto 1.8rem;position:relative}
+.connect .cta-row{justify-content:center;position:relative}
+.connect .btn.solid{background:var(--brass);color:#1c150a}
+.connect .btn.ghost{border-color:rgba(238,228,207,.4);color:#eee4cf}
+.connect .btn.ghost:hover{border-color:#fff}
+
+footer{padding:3rem 0 3.5rem;text-align:center;color:var(--muted);font-size:.85rem}
+footer a{color:var(--muted)}
+.sig{font-family:'Fraunces',serif;font-style:italic;color:var(--navy);font-size:1rem}
+</style>
 </head>
 <body>
+
+<header class="bar">
   <div class="wrap">
-    <!-- GB country-oval sticker. Swap for a headshot anytime: <img class="avatar" src="headshot.jpg" alt="Greg Buenzli"> -->
-    <svg class="avatar" viewBox="0 0 200 132" role="img" aria-label="Greg Buenzli">
-      <ellipse cx="100" cy="66" rx="94" ry="60" fill="#ffffff" stroke="#111111" stroke-width="8"/>
-      <text x="100" y="66" text-anchor="middle" dominant-baseline="central"
-            font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="66"
-            letter-spacing="3" fill="#111111">GB</text>
-    </svg>
-    <h1>Greg Buenzli</h1>
-    <p class="role">Author</p>
-    <hr class="rule">
-
-    <p class="bio">Greg traded normal for a sailboat named <em>Twig</em>, moving his family of five — plus a dog and a cat — aboard to chase adventure on the high seas. He writes about the funny, unvarnished truth of life afloat.</p>
-
-    <section class="book" aria-label="Book">
-      <img src="cover.png" alt="And Then We Hit a Rock — book cover">
-      <div>
-        <h2>And Then We Hit a Rock</h2>
-        <p>The true story of the voyage.</p>
-        <a class="btn" href="https://andthenwehitarock.com" target="_blank" rel="noopener">Read it →</a>
-      </div>
-    </section>
-
-    <nav class="links" aria-label="Elsewhere">
-      <a href="https://andthenwehitarock.com" target="_blank" rel="noopener">The Book</a>
-      <a href="https://twigafloat.com" target="_blank" rel="noopener">Twig Afloat — Cruising Hacks</a>
+    <span class="brand">
+      <svg viewBox="0 0 200 132" aria-hidden="true"><ellipse cx="100" cy="66" rx="94" ry="60" fill="none" stroke="#15304a" stroke-width="9"/><text x="100" y="66" text-anchor="middle" dominant-baseline="central" font-family="Georgia,serif" font-weight="700" font-size="66" fill="#15304a">GB</text></svg>
+      Greg Buenzli
+    </span>
+    <nav class="top">
+      <a href="#about">About</a>
+      <a href="#book">The Book</a>
+      <a href="#work">Work</a>
+      <a href="#connect">Connect</a>
     </nav>
-
-    <footer>
-      © 2026 Greg Buenzli · Published by <a href="https://perioddoublespace.com" target="_blank" rel="noopener">Period Double Space</a>
-    </footer>
   </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero" id="top">
+    <svg class="oval rise" style="animation-delay:.05s" viewBox="0 0 200 132" role="img" aria-label="Greg Buenzli">
+      <ellipse cx="100" cy="66" rx="94" ry="60" fill="#ffffff" stroke="#111111" stroke-width="8"/>
+      <text x="100" y="66" text-anchor="middle" dominant-baseline="central" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="66" letter-spacing="3" fill="#111111">GB</text>
+    </svg>
+    <h1 class="rise" style="animation-delay:.15s">Greg <em>Buenzli</em></h1>
+    <p class="tag rise" style="animation-delay:.28s">Best-selling author &amp; engineering leader — telling true stories, on the page and in the wild.</p>
+    <div class="meta rise" style="animation-delay:.4s">
+      <span>Author, <em>And Then We Hit a Rock</em></span><span class="dotsep"></span>
+      <span>Chief Technology Officer</span><span class="dotsep"></span>
+      <span>Denver, Colorado</span>
+    </div>
+  </section>
+
+  <hr class="hr">
+
+  <section class="about" id="about">
+    <div class="sec-head"><span class="num">01</span><h2>About</h2></div>
+    <p>Greg traded normal for a sailboat named <em>Twig</em>, moving his family of five — plus a dog and a cat — aboard to chase adventure on the high seas. The voyage became <em>And Then We Hit a Rock</em>, a best-selling humor travel memoir about everything going wonderfully wrong.</p>
+    <p>By day he leads software engineering teams. As a product and technology executive, his focus is on harnessing the collective strengths of engineers to ship innovative software — grounded in coaching, clear communication, and building environments where ideas thrive and good work feels inevitable. Whether it's a codebase or a coastline, the throughline is the same: bring good people together, and go somewhere worth going.</p>
+  </section>
+
+  <hr class="hr">
+
+  <section id="book">
+    <div class="sec-head"><span class="num">02</span><h2>The Book</h2></div>
+    <div class="book">
+      <div class="cover"><img src="cover.png" alt="And Then We Hit a Rock — book cover"></div>
+      <div>
+        <h3>And Then We Hit a Rock</h3>
+        <p class="by">A family of five, a dog, a cat, and one sailboat.</p>
+        <div class="stars">
+          <span><span class="g">★★★★</span><span style="color:var(--line)">★</span> <b>4.2</b> / 5</span>
+          <span><b>6,396</b> ratings</span>
+          <span><b>75,000+</b> readers</span>
+        </div>
+        <p class="blurb">After decades of dreaming and planning, the explorers finally sailed off into the sunset. They found the palm trees and coconuts they'd longed for — and glimpsed the other side of paradise: waterspouts, cargo ships, and the discovery that living the dream is rarely as tidy as the postcard.</p>
+        <p class="pull">"If everything had gone to plan, it wouldn't have been much of an adventure."</p>
+        <div class="cta-row">
+          <a class="btn solid" href="https://andthenwehitarock.com" target="_blank" rel="noopener">Read the book</a>
+          <a class="btn ghost" href="https://amzn.to/3IoEvb9" target="_blank" rel="noopener sponsored">Free in Kindle Unlimited</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hr">
+
+  <section id="work">
+    <div class="sec-head"><span class="num">03</span><h2>Engineering Leadership</h2></div>
+    <div class="tl">
+      <div class="item now">
+        <div class="role">Chief Technology Officer</div>
+        <div><span class="org">Automotive Titling Company</span> · <span class="when">2026 – Present</span></div>
+        <div class="desc">Leading technology and engineering for a PE-backed, tech-enabled services company (previously VP of Software Engineering).</div>
+      </div>
+      <div class="item">
+        <div class="role">Senior Director of Software Engineering</div>
+        <div><span class="org">Ibotta</span> · <span class="when">2019 – 2025</span></div>
+        <div class="desc">Scaled B2B and direct-to-consumer engineering orgs through hypergrowth, leading directors, managers, and multiple product teams.</div>
+      </div>
+      <div class="item">
+        <div class="role">Software Development Manager</div>
+        <div><span class="org">Xactly</span> · <span class="when">2017 – 2019</span></div>
+      </div>
+      <div class="item">
+        <div class="role">Senior Software Engineering Manager</div>
+        <div><span class="org">Groupon</span> · <span class="when">2014 – 2017</span></div>
+        <div class="desc">Led multiple engineering teams in Chicago and a multi-year program consolidating systems into a new merchant portal for Groupon Goods.</div>
+      </div>
+      <div class="item">
+        <div class="role">Earlier</div>
+        <div><span class="org">Accuity · MyForce</span> · <span class="when">2013 – 2014</span></div>
+        <div class="desc">Head of software development and principal architect roles across fintech and consumer-safety products.</div>
+      </div>
+    </div>
+    <p class="edu">Education — <b>University of Colorado at Boulder</b></p>
+  </section>
+
+  <hr class="hr">
+
+  <section id="ventures">
+    <div class="sec-head"><span class="num">04</span><h2>Elsewhere</h2></div>
+    <div class="cards">
+      <a class="card" href="https://twigafloat.com" target="_blank" rel="noopener">
+        <div class="k">Twig Afloat</div>
+        <div class="d">Field-tested cruising hacks and stories from life aboard the sailboat <em>Twig</em>.</div>
+        <div class="go">twigafloat.com →</div>
+      </a>
+      <a class="card" href="https://perioddoublespace.com" target="_blank" rel="noopener">
+        <div class="k">Period Double Space</div>
+        <div class="d">The independent press behind <em>And Then We Hit a Rock</em>.</div>
+        <div class="go">perioddoublespace.com →</div>
+      </a>
+    </div>
+  </section>
+
+  <section id="connect">
+    <div class="connect">
+      <span class="label" style="color:var(--brass)">Get in touch</span>
+      <h2>Let's connect</h2>
+      <p>Talk shop about engineering, swap sailing disaster stories, or just say hello.</p>
+      <div class="cta-row">
+        <a class="btn solid" href="https://www.linkedin.com/in/greg-buenzli/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://andthenwehitarock.com" target="_blank" rel="noopener">Read the book</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="sig">Greg Buenzli</p>
+    © 2026 · Denver, Colorado · Published by <a href="https://perioddoublespace.com" target="_blank" rel="noopener">Period Double Space</a>
+  </footer>
+
+</div>
 </body>
 </html>
