@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://gregbuenzli.com/">
   <meta property="og:image" content="https://gregbuenzli.com/cover.png">
   <!-- Inline SVG favicon: GB monogram -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f3a5f'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='700' fill='%23faf8f4' text-anchor='middle'%3EGB%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='14' ry='9.5' fill='%23ffffff' stroke='%23111111' stroke-width='2'/%3E%3Ctext x='16' y='16' text-anchor='middle' dominant-baseline='central' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='11' fill='%23111111'%3EGB%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -39,13 +39,11 @@
     .wrap { max-width: 640px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 5.5rem) 1.5rem 3rem; text-align: center; }
 
     .avatar {
-      width: 108px; height: 108px; border-radius: 50%;
+      display: block;
+      width: clamp(124px, 32vw, 152px);
+      height: auto;
       margin: 0 auto 1.6rem;
-      background: var(--sea); color: var(--paper);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 2.4rem;
-      letter-spacing: 0.02em;
-      box-shadow: 0 18px 40px -20px rgba(31,58,95,0.6);
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.16));
     }
     h1 {
       font-family: 'Fraunces', Georgia, serif;
@@ -104,8 +102,13 @@
 </head>
 <body>
   <div class="wrap">
-    <!-- Replace this monogram with a headshot: <img class="avatar" src="headshot.jpg" alt="Greg Buenzli"> -->
-    <div class="avatar" aria-hidden="true">GB</div>
+    <!-- GB country-oval sticker. Swap for a headshot anytime: <img class="avatar" src="headshot.jpg" alt="Greg Buenzli"> -->
+    <svg class="avatar" viewBox="0 0 200 132" role="img" aria-label="Greg Buenzli">
+      <ellipse cx="100" cy="66" rx="94" ry="60" fill="#ffffff" stroke="#111111" stroke-width="8"/>
+      <text x="100" y="66" text-anchor="middle" dominant-baseline="central"
+            font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="66"
+            letter-spacing="3" fill="#111111">GB</text>
+    </svg>
     <h1>Greg Buenzli</h1>
     <p class="role">Author</p>
     <hr class="rule">
